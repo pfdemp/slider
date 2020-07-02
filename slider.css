@@ -1,0 +1,65 @@
+h1 {
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; 
+  font-weight: 600;
+  margin: 0 auto;
+  text-align: center;
+  color: #07294D;
+}
+h2 {
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; 
+  font-weight: 600;
+  color: #07294D;
+}
+p {
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; 
+  font-size: 16px;
+  color: #00000;
+}
+
+a {
+  text-decoration: underline;
+  color: #3455F3;
+}
+a:hover {
+	cursor: pointer;
+}
+
+#container {
+	background-color: #ffffff;
+	padding: 5px;
+	max-width: 820px;
+	margin: 10px auto;
+	
+}
+#instructions {
+	max-width: 800px;
+}
+p.link {
+  text-align: center;
+  font-size: 18px;
+  color: #FFC600;
+	margin-top: 10px;
+}
+#slider {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.tiles {
+	display: block;
+	}
+button {
+  background-color: #07294D;
+  border-radius: 12px;
+  color: white;
+	margin: 15px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+#controls {
+	margin: 10px auto;
+	text-align: center;
+	display: block;
+}

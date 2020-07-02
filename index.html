@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Slide Puzzle</title>
+<link rel="stylesheet" type="text/css" href="slider.css" />
+</head>
+<body>
+<div id="container">
+    <div id="header">
+      <h1>Slide Puzzle</h1>
+    </div>
+	<div id="instructions"><p>This game is based on the slide puzzle where you try to reassemble a picture by sliding tiles into the empty space. When you start the game, the tiles will be shuffled. Click on any tile adjoining the blank space to move it. Keep sliding tiles until the correct image is assembled.</p></div>
+	<div id="controls"><button onclick="StartGame()">Start a New Game</button> &nbsp; <button>Move: &nbsp; <span id="movenum">&nbsp;</span></button></div>
+	<table id="slider">
+		<tbody>
+			<tr>
+				<td><img onClick="MoveCard(0)" id="i0" class="tiles" src="dragon-puzzle-01-2_01.jpg"></td>
+				<td><img onClick="MoveCard(1)" id="i1" class="tiles" src="dragon-puzzle-01-2_02.jpg"></td>
+				<td><img onClick="MoveCard(2)" id="i2" class="tiles" src="dragon-puzzle-01-2_03.jpg"></td>
+			</tr>
+			<tr>
+				<td><img onClick="MoveCard(3)" id="i3" class="tiles" src="dragon-puzzle-01-2_04.jpg"></td>
+				<td><img onClick="MoveCard(4)" id="i4" class="tiles" src="dragon-puzzle-01-2_05.jpg"></td>
+				<td><img onClick="MoveCard(5)" id="i5" class="tiles" src="dragon-puzzle-01-2_06.jpg"></td>
+			</tr>
+			<tr>
+				<td><img onClick="MoveCard(6)" id="i6" class="tiles" src="dragon-puzzle-01-2_07.jpg"></td>
+				<td><img onClick="MoveCard(7)" id="i7" class="tiles" src="dragon-puzzle-01-2_08.jpg"></td>
+				<td><img onClick="MoveCard(8)" id="i8" class="tiles" src="dragon-puzzle-01-2_09.jpg"></td>
+			</tr>
+			</tbody>
+	</table>
+</div>
+<script src="slider.js"></script>
+	</body>
+</html>
