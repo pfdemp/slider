@@ -26,6 +26,7 @@ a:hover {
 
 #container {
 	background-color: #ffffff;
+  position: relative;
 	padding: 5px;
 	max-width: 820px;
 	margin: 10px auto;
@@ -61,5 +62,14 @@ button {
 #controls {
 	margin: 10px auto;
 	text-align: center;
+	display: block;
+}
+.fireworks {
+	position: absolute;
+	top: 250px;
+	left: 250px;
+	display: none;
+}
+.fireworks-show {
 	display: block;
 }

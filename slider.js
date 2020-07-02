@@ -38,6 +38,7 @@ function sound(src) {
 function StartGame() {
 	gamenotstarted = false;
 	numtry = 0;
+	document.getElementById("fw").classList.remove('fireworks-show');
 	for (var img=0; img < 9; img++) {document.getElementById("i" + img).src = picsrc[img]}
 	document.getElementById("i2").src = blankpic.src;
 	document.getElementById("movenum").innerHTML = "&nbsp;";
@@ -73,6 +74,7 @@ function MoveCard(imgnum) {
 			gamenotstarted = true;
 			document.getElementById("i2").src = finalpiece;
 			winsound.play();
+			document.getElementById("fw").classList.add('fireworks-show');
 			}
 		}
 	}	// end function MoveCard
