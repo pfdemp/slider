@@ -71,7 +71,7 @@ function StartGame(gameoption) {
 	}	// end function StartGame
 
 function MoveCard(imgnum) {
-	if (gamenotstarted) {StartGame(99)}
+	if (gamenotstarted) {alert("Game over!")}
 	else {
 		if (adjoin[blank].indexOf(imgnum) > -1) {
 			numtry++;
