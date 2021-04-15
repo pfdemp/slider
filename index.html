@@ -11,7 +11,19 @@
       <h1>Slide Puzzle</h1>
     </div>
 	<div id="instructions"><p>This game is based on the slide puzzle where you try to reassemble a picture by sliding tiles into the empty space. When you start the game, the tiles will be shuffled. Click on any tile adjoining the blank space to move it. Keep sliding tiles until the correct image is assembled.</p></div>
-	<div id="controls"><button onclick="StartGame()">Start a New Game</button> &nbsp; <button>Move: &nbsp; <span id="movenum">&nbsp;</span></button></div>
+	<div id="controls"><button onclick="StartGame(99)">Start Random Game</button> &nbsp; OR &nbsp; <button><select id="mySelect" onchange="StartGame(this.value)" style="font-size: 16px;">
+  <option value="X" selected>Select a Game</option>
+  <option value="0">Game 1</option>
+  <option value="1">Game 2</option>
+  <option value="2">Game 3</option>
+  <option value="3">Game 4</option>
+  <option value="4">Game 5</option>
+  <option value="5">Game 6</option>
+  <option value="6">Game 7</option>
+  <option value="7">Game 8</option>
+  <option value="8">Game 9</option>
+  <option value="9">Game 10</option>
+</select></button> &nbsp; <button>Move: &nbsp; <span id="movenum">&nbsp;</span></button></div>
 	<table id="slider">
 		<tbody>
 			<tr>
@@ -31,7 +43,9 @@
 			</tr>
 			</tbody>
 	</table>
-	<div class="fireworks" id="fw"><img src="1179457.gif"</div>
+	<div class="fireworks" id="fw">
+		<img src="1179457.gif">
+	</div>
 </div>
 <script src="slider.js"></script>
 	</body>

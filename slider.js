@@ -21,7 +21,7 @@ function sound(src) {
 	var picsrc = new Array();
 	for (var oimg=0; oimg < 9; oimg++) {picsrc.push(pics[oimg].src)}
 	blankpic = new Image();
-	blankpic.src = "blank.jpg";
+	blankpic.src = "dragon-puzzle-01-2_00.jpg";
 	var finalpiece = picsrc[2];
 	picsrc[2] = blankpic.src;
 	adjoin = new Array(9);
@@ -34,28 +34,44 @@ function sound(src) {
 	adjoin[6]="37";
 	adjoin[7]="468";
 	adjoin[8]="57";
+	var pickgames = [[00,06,05,01,04,08,02,07,09],[04,01,05,06,08,07,09,02,00],[01,08,02,04,09,07,05,06,00],[00,06,07,01,04,02,05,09,08],[05,09,04,07,00,08,06,02,01],[00,01,06,07,02,04,08,09,05],[05,09,07,01,02,06,00,04,08],[07,06,05,02,04,09,00,01,08],[01,05,02,04,08,07,00,09,06],[05,01,06,02,00,04,08,07,09]];
 
-function StartGame() {
-	gamenotstarted = false;
-	numtry = 0;
-	document.getElementById("fw").classList.remove('fireworks-show');
-	for (var img=0; img < 9; img++) {document.getElementById("i" + img).src = picsrc[img]}
-	document.getElementById("i2").src = blankpic.src;
-	document.getElementById("movenum").innerHTML = "&nbsp;";
-	blank = 2;
-	for (var sloop=0; sloop < 100; sloop++) {
-		index = Math.floor(Math.random() * adjoin[blank].length);
-		movepic = adjoin[blank].charAt(index);
-		document.getElementById("i" + blank).src = document.getElementById("i" + movepic).src;
-		document.getElementById("i" + movepic).src = blankpic.src;
-		blank = movepic;
+function right(str,chr){return newstr=str.substr(str.length-chr,str.length)}
+
+function StartGame(gameoption) {
+	if (gameoption != "X"){
+		gamenotstarted = false;
+		numtry = 0;
+		document.getElementById("fw").classList.remove('fireworks-show');
+		for (var img=0; img < 9; img++) {document.getElementById("i" + img).src = picsrc[img]}
+		document.getElementById("i2").src = blankpic.src;
+		document.getElementById("movenum").innerHTML = "&nbsp;";
+		blank = 2;
+	}
+	if (gameoption == 99) {
+		for (var sloop=0; sloop < 100; sloop++) {
+			index = Math.floor(Math.random() * adjoin[blank].length);
+			movepic = adjoin[blank].charAt(index);
+			document.getElementById("i" + blank).src = document.getElementById("i" + movepic).src;
+			document.getElementById("i" + movepic).src = blankpic.src;
+			blank = movepic;
+			}
+		} else {
+			gameboard = pickgames[gameoption];
+			for (var img=0; img < 9; img++) {
+				document.getElementById("i" + img).src = "dragon-puzzle-01-2_0" + gameboard[img] + ".jpg";
+				if (gameboard[img] == 0) {blank = img}
+			}
 		}
-	document.game.numtry.value = "";
-	document.game.message.value = "Good luck!";
+
+	
+//	var picgame = new Array();
+//	for (var oimg=0; oimg < 9; oimg++) {picgame.push(right(pics[oimg].src,6))}
+//	document.getElementById("tiles").value = picgame.join();
 	}	// end function StartGame
 
 function MoveCard(imgnum) {
-	if (gamenotstarted) {StartGame()}
+	if (gamenotstarted) {StartGame(99)}
 	else {
 		if (adjoin[blank].indexOf(imgnum) > -1) {
 			numtry++;
